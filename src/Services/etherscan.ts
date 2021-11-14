@@ -301,6 +301,17 @@ export class Etherscan {
         }
     }
 
+    /* Tokens */
+    public async getERC20TokenInfo(contractAddress: string): Promise<IResponse> {
+        try {
+            const url = `${this.apiUrl}?module=stats&action=tokeninfo&contractaddress=${contractAddress}&apikey=${this.apiKey}`;
+            return this.wrapFetch(url);
+        } catch (err) {
+            throw new Error(`getERC20TokenTotalSupply Error: ${(err as any)?.message}`);
+        }
+    }
+
+
     public async getERC20TokenBalance(contractAddress: string, address: string): Promise<IResponse> {
         try {
             const url = `${this.apiUrl}?module=account&action=tokenbalance&contractaddress=${contractAddress}&address=${address}&tag=latest&apikey=${this.apiKey}`;

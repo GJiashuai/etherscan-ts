@@ -323,6 +323,16 @@ class Etherscan {
             throw new Error(`getERC20TokenTotalSupply Error: ${(_a = err) === null || _a === void 0 ? void 0 : _a.message}`);
         }
     }
+    async getERC20TokenInfo(contractAddress) {
+        var _a;
+        try {
+            const url = `${this.apiUrl}?module=stats&action=tokeninfo&contractaddress=${contractAddress}&apikey=${this.apiKey}`;
+            return this.wrapFetch(url);
+        }
+        catch (err) {
+            throw new Error(`getERC20TokenTotalSupply Error: ${(_a = err) === null || _a === void 0 ? void 0 : _a.message}`);
+        }
+    }
     async getERC20TokenBalance(contractAddress, address) {
         var _a;
         try {

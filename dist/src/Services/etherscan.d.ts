@@ -39,6 +39,7 @@ export declare class Etherscan {
     gasPrice(address: string): Promise<IResponse>;
     estimateGas(): Promise<IResponse>;
     getERC20TokenTotalSupply(contractAddress: string): Promise<IResponse>;
+    getERC20TokenInfo(contractAddress: string): Promise<IResponse>;
     getERC20TokenBalance(contractAddress: string, address: string): Promise<IResponse>;
     estimateConfirmationTime(gasPrice: number): Promise<IResponse>;
     getGasOracle(): Promise<IResponse>;
