@@ -304,7 +304,7 @@ export class Etherscan {
     /* Tokens */
     public async getERC20TokenInfo(contractAddress: string): Promise<IResponse> {
         try {
-            const url = `${this.apiUrl}?module=stats&action=tokeninfo&contractaddress=${contractAddress}&apikey=${this.apiKey}`;
+            const url = `${this.apiUrl}?module=token&action=tokeninfo&contractaddress=${contractAddress}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
             throw new Error(`getERC20TokenTotalSupply Error: ${(err as any)?.message}`);

@@ -326,7 +326,7 @@ class Etherscan {
     async getERC20TokenInfo(contractAddress) {
         var _a;
         try {
-            const url = `${this.apiUrl}?module=stats&action=tokeninfo&contractaddress=${contractAddress}&apikey=${this.apiKey}`;
+            const url = `${this.apiUrl}?module=token&action=tokeninfo&contractaddress=${contractAddress}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         }
         catch (err) {
