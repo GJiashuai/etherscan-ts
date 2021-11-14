@@ -20,7 +20,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=balance&address=${address}&tag=latest&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getSingleEtherBalance Error: ${err.message}`);
+            throw new Error(`getSingleEtherBalance Error: ${(err as any)?.message}`);
         }
     }
 
@@ -32,7 +32,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=balancemulti&address=${addresses}&tag=latest&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getMultipleEtherBalance Error: ${err.message}`);
+            throw new Error(`getMultipleEtherBalance Error: ${(err as any)?.message}`);
         }
     }
 
@@ -41,7 +41,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=txlist&address=${address}&startblock=${startblock}&endblock=${endblock}&page=${page}&offset=${offset}&sort=${sort}}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getTrxList Error: ${err.message}`);
+            throw new Error(`getTrxList Error: ${(err as any)?.message}`);
         }
     }
 
@@ -50,7 +50,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=txlistinternal&address=${address}&startblock=${startblock}&endblock=${endblock}&page=${page}&offset=${offset}&sort=${sort}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getInternalTrxListByAddress Error: ${err.message}`);
+            throw new Error(`getInternalTrxListByAddress Error: ${(err as any)?.message}`);
         }
     }
 
@@ -59,7 +59,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=txlistinternal&txhash=${txHash}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getInternalTrxListByHash Error: ${err.message}`);
+            throw new Error(`getInternalTrxListByHash Error: ${(err as any)?.message}`);
         }
     }
 
@@ -68,7 +68,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=txlistinternal&startblock=${startblock}&endblock=${endblock}&page=${page}&offset=${offset}&sort=${sort}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getInternalTrxListByBlockRange Error: ${err.message}`);
+            throw new Error(`getInternalTrxListByBlockRange Error: ${(err as any)?.message}`);
         }
     }
 
@@ -81,7 +81,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=tokentx&${query}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getERC20TokenTransferEventList Error: ${err.message}`);
+            throw new Error(`getERC20TokenTransferEventList Error: ${(err as any)?.message}`);
         }
     }
 
@@ -90,7 +90,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=tokennfttx&contractaddress=${contractAddress}&address=${address}&page=${page}&offset=${offset}&sort=${sort}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getERC721TokenTransferEventList Error: ${err.message}`);
+            throw new Error(`getERC721TokenTransferEventList Error: ${(err as any)?.message}`);
         }
     }
 
@@ -102,7 +102,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=getminedblocks&address=${address}&blocktype=${type}&page=${page}&offset=${offset}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getMinedBlocksByAddress Error: ${err.message}`);
+            throw new Error(`getMinedBlocksByAddress Error: ${(err as any)?.message}`);
         }
     }
 
@@ -112,7 +112,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=contract&action=getabi&address=${address}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getContractAbi Error: ${err.message}`);
+            throw new Error(`getContractAbi Error: ${(err as any)?.message}`);
         }
     }
 
@@ -122,7 +122,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=transaction&action=getstatus&txhash=${txHash}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`checkContractExecutionStatus Error: ${err.message}`);
+            throw new Error(`checkContractExecutionStatus Error: ${(err as any)?.message}`);
         }
     }
 
@@ -132,7 +132,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=transaction&action=gettxreceiptstatus&txhash=${txHash}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`checkTransactionReceiptStatus Error: ${err.message}`);
+            throw new Error(`checkTransactionReceiptStatus Error: ${(err as any)?.message}`);
         }
     }
 
@@ -142,7 +142,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=block&action=getblockreward&blockno=${blockNo}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getBlockandUncleReward Error: ${err.message}`);
+            throw new Error(`getBlockandUncleReward Error: ${(err as any)?.message}`);
         }
     }
 
@@ -151,7 +151,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=block&action=getblockcountdown&blockno=${blockNo}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getEstimatedBlockCountdownTime Error: ${err.message}`);
+            throw new Error(`getEstimatedBlockCountdownTime Error: ${(err as any)?.message}`);
         }
     }
 
@@ -163,7 +163,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=block&action=getblocknobytime&timestamp=${timestamp}&closest=${closest}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getBlockNumberByTimestamp Error: ${err.message}`);
+            throw new Error(`getBlockNumberByTimestamp Error: ${(err as any)?.message}`);
         }
     }
 
@@ -173,7 +173,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_blockNumber&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getRecentBlockNumber Error: ${err.message}`);
+            throw new Error(`getRecentBlockNumber Error: ${(err as any)?.message}`);
         }
     }
 
@@ -182,7 +182,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getBlockByNumber&tag=${blockNumber}&boolean=true&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getBlockbyNumber Error: ${err.message}`);
+            throw new Error(`getBlockbyNumber Error: ${(err as any)?.message}`);
         }
     }
 
@@ -191,7 +191,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getUncleByBlockNumberAndIndex&tag=${blockNumber}&index=${index}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getUncleByBlockNumberAndIndex Error: ${err.message}`);
+            throw new Error(`getUncleByBlockNumberAndIndex Error: ${(err as any)?.message}`);
         }
     }
 
@@ -200,7 +200,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getBlockTransactionCountByNumber&tag=${blockNumber}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getBlockTransactionCountByNumber Error: ${err.message}`);
+            throw new Error(`getBlockTransactionCountByNumber Error: ${(err as any)?.message}`);
         }
     }
 
@@ -209,7 +209,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getTransactionByHash&txhash=${txHash}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getTransactionByHash Error: ${err.message}`);
+            throw new Error(`getTransactionByHash Error: ${(err as any)?.message}`);
         }
     }
 
@@ -218,7 +218,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getTransactionByBlockNumberAndIndex&tag=${blockNumber}&index=${index}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getTransactionByBlockNumberAndIndex Error: ${err.message}`);
+            throw new Error(`getTransactionByBlockNumberAndIndex Error: ${(err as any)?.message}`);
         }
     }
 
@@ -227,7 +227,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getTransactionCount&address=${address}&tag=latest&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getTransactionCount Error: ${err.message}`);
+            throw new Error(`getTransactionCount Error: ${(err as any)?.message}`);
         }
     }
 
@@ -235,7 +235,7 @@ export class Etherscan {
         try {
             throw new Error(`Not Implemented`);
         } catch (err) {
-            throw new Error(`sendRawTransaction Error: ${err.message}`);
+            throw new Error(`sendRawTransaction Error: ${(err as any)?.message}`);
         }
     }
 
@@ -244,7 +244,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getTransactionReceipt&txhash=${txHash}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getTransactionReceipt Error: ${err.message}`);
+            throw new Error(`getTransactionReceipt Error: ${(err as any)?.message}`);
         }
     }
 
@@ -252,7 +252,7 @@ export class Etherscan {
         try {
             throw new Error(`Not Implemented`);
         } catch (err) {
-            throw new Error(`call Error: ${err.message}`);
+            throw new Error(`call Error: ${(err as any)?.message}`);
         }
     }
 
@@ -261,7 +261,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getTransactionCount&address=${address}&tag=latest&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getCode Error: ${err.message}`);
+            throw new Error(`getCode Error: ${(err as any)?.message}`);
         }
     }
 
@@ -270,7 +270,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getStorageAt&address=${address}&position=${position}&tag=latest&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getStorageAt Error: ${err.message}`);
+            throw new Error(`getStorageAt Error: ${(err as any)?.message}`);
         }
     }
 
@@ -279,7 +279,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=proxy&action=eth_getTransactionCount&address=${address}&tag=latest&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`gasPrice Error: ${err.message}`);
+            throw new Error(`gasPrice Error: ${(err as any)?.message}`);
         }
     }
 
@@ -287,7 +287,7 @@ export class Etherscan {
         try {
             throw new Error(`Not Implemented`);
         } catch (err) {
-            throw new Error(`estimateGas Error: ${err.message}`);
+            throw new Error(`estimateGas Error: ${(err as any)?.message}`);
         }
     }
 
@@ -297,7 +297,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getERC20TokenTotalSupply Error: ${err.message}`);
+            throw new Error(`getERC20TokenTotalSupply Error: ${(err as any)?.message}`);
         }
     }
 
@@ -306,7 +306,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=account&action=tokenbalance&contractaddress=${contractAddress}&address=${address}&tag=latest&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getERC20TokenBalance Error: ${err.message}`);
+            throw new Error(`getERC20TokenBalance Error: ${(err as any)?.message}`);
         }
     }
 
@@ -316,7 +316,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=gastracker&action=gasestimate&gasprice=${gasPrice}&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`estimateConfirmationTime Error: ${err.message}`);
+            throw new Error(`estimateConfirmationTime Error: ${(err as any)?.message}`);
         }
     }
 
@@ -325,7 +325,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=gastracker&action=gasoracle&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getGasOracle Error: ${err.message}`);
+            throw new Error(`getGasOracle Error: ${(err as any)?.message}`);
         }
     }
 
@@ -335,7 +335,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=stats&action=ethsupply&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getTotalEther Error: ${err.message}`);
+            throw new Error(`getTotalEther Error: ${(err as any)?.message}`);
         }
     }
 
@@ -344,7 +344,7 @@ export class Etherscan {
             const url = `${this.apiUrl}?module=stats&action=ethprice&apikey=${this.apiKey}`;
             return this.wrapFetch(url);
         } catch (err) {
-            throw new Error(`getEtherLastPrice Error: ${err.message}`);
+            throw new Error(`getEtherLastPrice Error: ${(err as any)?.message}`);
         }
     }
 
@@ -358,7 +358,7 @@ export class Etherscan {
             }
             return json;
         } catch (err) {
-            throw new Error(`Failed to fetch: ${err.message}`);
+            throw new Error(`Failed to fetch: ${(err as any)?.message}`);
         }
     }
 }

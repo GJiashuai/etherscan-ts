@@ -1,0 +1,48 @@
+import { IResponse } from "src/Interfaces/response.interface";
+export declare class Etherscan {
+    private apiKey;
+    private apiUrl;
+    constructor(key: string);
+    getSingleEtherBalance(address: string): Promise<IResponse>;
+    getMultipleEtherBalance(addresses: string[]): Promise<IResponse>;
+    getTrxList(address: string, startblock: number, endblock: number, page: number, offset: number, sort: string): Promise<IResponse>;
+    getInternalTrxListByAddress(address: string, startblock: number, endblock: number, page: number, offset: number, sort: string): Promise<IResponse>;
+    getInternalTrxListByHash(txHash: string): Promise<IResponse>;
+    getInternalTrxListByBlockRange(startblock: number, endblock: number, page: number, offset: number, sort: string): Promise<IResponse>;
+    getERC20TokenTransferEventList({ contractAddress, address, page, offset, sort }: {
+        contractAddress: string | undefined;
+        address: string;
+        page: number;
+        offset: number;
+        sort: string;
+    }): Promise<IResponse>;
+    getERC721TokenTransferEventList(contractAddress: string, address: string, page: number, offset: number, sort: string): Promise<IResponse>;
+    getMinedBlocksByAddress(address: string, type: string, page: number, offset: number): Promise<IResponse>;
+    getContractAbi(address: string): Promise<IResponse>;
+    checkContractExecutionStatus(txHash: string): Promise<IResponse>;
+    checkTransactionReceiptStatus(txHash: string): Promise<IResponse>;
+    getBlockandUncleReward(blockNo: number): Promise<IResponse>;
+    getEstimatedBlockCountdownTime(blockNo: number): Promise<IResponse>;
+    getBlockNumberByTimestamp(timestamp: number, closest: string): Promise<IResponse>;
+    getRecentBlockNumber(): Promise<IResponse>;
+    getBlockbyNumber(blockNumber: string): Promise<IResponse>;
+    getUncleByBlockNumberAndIndex(blockNumber: string, index: string): Promise<IResponse>;
+    getBlockTransactionCountByNumber(blockNumber: string): Promise<IResponse>;
+    getTransactionByHash(txHash: string): Promise<IResponse>;
+    getTransactionByBlockNumberAndIndex(blockNumber: string, index: string): Promise<IResponse>;
+    getTransactionCount(address: string): Promise<IResponse>;
+    sendRawTransaction(): Promise<IResponse>;
+    getTransactionReceipt(txHash: string): Promise<IResponse>;
+    call(): Promise<IResponse>;
+    getCode(address: string): Promise<IResponse>;
+    getStorageAt(address: string, position: string): Promise<IResponse>;
+    gasPrice(address: string): Promise<IResponse>;
+    estimateGas(): Promise<IResponse>;
+    getERC20TokenTotalSupply(contractAddress: string): Promise<IResponse>;
+    getERC20TokenBalance(contractAddress: string, address: string): Promise<IResponse>;
+    estimateConfirmationTime(gasPrice: number): Promise<IResponse>;
+    getGasOracle(): Promise<IResponse>;
+    getTotalEther(): Promise<IResponse>;
+    getEtherLastPrice(): Promise<IResponse>;
+    private wrapFetch;
+}

@@ -58,7 +58,7 @@
         "test": "jest",
         "lint": "eslint \"{src,test}/**/*.ts\" --fix",
         "prettier": "prettier --write --config .prettierrc ./src///*.ts && prettier --write --config .prettierrc ./test///*.ts",
-        "build": "tsc",
+        "build": "tsc ",
         "prebuild": "rimraf ./dist",
         "release": "standard-version",
         "release:major": "standard-version -- --release-as major",
