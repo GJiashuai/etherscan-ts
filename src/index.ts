@@ -1,3 +1,3 @@
-import "./Services/etherscan"
+import "./Services/etherscan";
 
 export * from "./Services/etherscan";

@@ -71,6 +71,7 @@
     "dependencies": {
         "dotenv": "^8.2.0",
         "node-fetch": "^2.6.1",
+        "query-string": "^7.0.1",
         "tslib": "^2.2.0"
     },
     "volta": {
