@@ -1,6 +1,6 @@
 {
-    "name": "etherscan-ts",
-    "version": "0.0.6",
+    "name": "etherscan-ts-g",
+    "version": "0.0.7",
     "description": "Ethersdcan API library with typescript",
     "main": "./dist/src/index.js",
     "types": "./dist/src/index.d.ts",
@@ -66,7 +66,7 @@
         "release:patch": "standard-version -- --release-as patch",
         "release:version": "standard-version -- --release-as"
     },
-    "author": "CuteWisp <sweatpotato13@gmail.com>",
+    "author": "GJS <guojiashuai_123@163.com>",
     "license": "MIT",
     "dependencies": {
         "dotenv": "^8.2.0",
